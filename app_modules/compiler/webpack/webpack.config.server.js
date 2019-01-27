@@ -6,6 +6,7 @@ const config = getConfig();
 
 const serverConfiguration = merge(baseConfiguraton, {
     entry: getEntries(IS_PRODUCTION, path, path.join(__dirname, config.paths.rootPathRelativeToCompiler)),
+    target: 'node',
     output: {
         path: path.join(__dirname, config.paths.outputBasePath),
         publicPath: IS_PRODUCTION ? config.paths.publicPath : '/',
@@ -32,7 +33,7 @@ const serverConfiguration = merge(baseConfiguraton, {
                     {
                         loader: 'eslint-loader',
                         options: {
-                            ignorePath: '.eslintignore'
+                            ignorePath: path.join(__dirname, config.paths.rootPathRelativeToCompiler, '.eslintignore')
                         }
                     }
                 ]
@@ -44,18 +45,7 @@ const serverConfiguration = merge(baseConfiguraton, {
                     {
                         loader: 'babel-loader',
                         options: {
-                            presets: [
-                                [
-                                    'env',
-                                    {
-                                        modules: false,
-                                        targets: { browsers: ['last 2 versions', 'safari >= 7', 'ie >= 10'] }
-                                    }
-                                ],
-                                'stage-0',
-                                'react'
-                            ],
-                            plugins: ['transform-decorators-legacy', 'transform-class-properties'],
+                            presets: ['@babel/preset-env', '@babel/preset-react'],
                             comments: true
                         }
                     }
@@ -64,4 +54,5 @@ const serverConfiguration = merge(baseConfiguraton, {
         ]
     }
 });
-module.exports = serverConfiguration;
+
+export default serverConfiguration;

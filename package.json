@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
+        "build:prod": "cross-env NODE_ENV=production webpack --profile --progress --colors --config app_modules/compiler/webpack/webpack.config.babel.js",
         "precommit": "lint-staged --config app_modules/hooks/husky/.lintstagedrc",
         "cosmics": "prettier --config app_modules/cosmics/prettier/.prettierrc --write \"app/**/*.{js,scss}\"",
         "lint:js": "eslint --config app_modules/linter/js-linter/.eslintrc app/**/*.js",
@@ -12,11 +13,13 @@
     "author": "Harish Singh Dhami <hsd.1989@gmail.com> (https://github.com/hdhami)",
     "license": "ISC",
     "devDependencies": {
-        "@babel/core": "^7.1.2",
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.3.1",
+        "@babel/preset-react": "^7.0.0",
+        "@babel/register": "^7.0.0",
         "babel-eslint": "^10.0.1",
         "babel-loader": "^8.0.4",
-        "babel-preset-env": "^1.7.0",
-        "babel-preset-react": "^6.24.1",
+        "cross-env": "^5.2.0",
         "editorconfig": "^0.15.2",
         "enzyme": "^3.7.0",
         "enzyme-adapter-react-16": "^1.6.0",
@@ -24,6 +27,7 @@
         "eslint": "^5.8.0",
         "eslint-config-airbnb": "^17.1.0",
         "eslint-config-prettier": "^3.1.0",
+        "eslint-loader": "^2.1.1",
         "eslint-plugin-import": "^2.14.0",
         "eslint-plugin-jsx-a11y": "^6.1.2",
         "eslint-plugin-prettier": "^3.0.0",
@@ -41,6 +45,7 @@
         "stylelint": "^9.7.1",
         "uglifyjs-webpack-plugin": "^2.1.1",
         "webpack": "^4.25.1",
+        "webpack-cli": "^3.2.1",
         "webpack-merge": "^4.2.1"
     },
     "dependencies": {

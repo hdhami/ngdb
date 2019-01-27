@@ -1,5 +1,5 @@
 const getVendorEntry = isProduction => {
-    const vendors = ['react', 'react-dom', 'prop-types', 'mobx', 'mobx-react', 'axios', 'moment'];
+    const vendors = ['react', 'react-dom', 'prop-types'];
     return {
         vendor: isProduction ? vendors : vendors.unshift('babel-polyfill')
     };

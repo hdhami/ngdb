@@ -32,6 +32,11 @@ let configuration = {
             new UglifyJsPlugin({
                 cache: true,
                 parallel: true,
+                uglifyOptions: {
+                    compress: false,
+                    ecma: 6,
+                    mangle: true
+                },
                 sourceMap: !IS_PRODUCTION
             }),
             new OptimizeCSSAssetsPlugin({})
