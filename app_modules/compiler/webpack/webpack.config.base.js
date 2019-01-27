@@ -2,6 +2,7 @@ import webpack, { DefinePlugin } from 'webpack';
 import merge from 'webpack-merge';
 import path from 'path';
 import fs from 'fs';
+import fse from 'fs-extra';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
@@ -62,5 +63,5 @@ if (!IS_PRODUCTION) {
     const devServerConfig = getDevModeConfig({ path, webpack });
     configuration = merge(configuration, devServerConfig);
 }
-const baseConfig = configuration;
-export { baseConfig, path, fs, webpack, IS_PRODUCTION };
+const baseConfiguraton = configuration;
+export { baseConfiguraton, path, fs, fse, webpack, IS_PRODUCTION, merge };
