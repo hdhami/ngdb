@@ -2,9 +2,9 @@ import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { green } from 'chalk';
-import App from './app/components/root/app';
-import Html from './app/html/dashboard';
-import PORT from './config/server-config';
+import App from '../components/root/app';
+import Html from '../html/dashboard';
+import PORT from '../config/server-config';
 
 const server = express();
 
