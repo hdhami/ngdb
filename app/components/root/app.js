@@ -42,7 +42,8 @@ const ThemeStyle = {
     'justify-content': 'center',
     'align-items': 'center',
     border: '1px solid #fff',
-    'box-sizing': 'border-box'
+    'box-sizing': 'border-box',
+    cursor: 'pointer'
 };
 
 const Header = () => <header style={HeaderStyle}>Welcome to My Dashboard</header>;
