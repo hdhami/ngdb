@@ -19,7 +19,7 @@ const MainSectionStyle = {
     display: 'flex',
     'flex-direction': 'row',
     flex: 1,
-    'align-items': 'center',
+    'flex-wrap': 'wrap',
     'justify-content': 'center',
     color: 'gray',
     background: '#eee'
@@ -35,11 +35,25 @@ const FooterStyle = {
     'border-top': '1px solid #eee'
 };
 
+const ThemeStyle = {
+    display: 'flex',
+    'min-width': '25%',
+    flex: 1,
+    'justify-content': 'center',
+    'align-items': 'center',
+    border: '1px solid #fff',
+    'box-sizing': 'border-box'
+};
+
 const Header = () => <header style={HeaderStyle}>Welcome to My Dashboard</header>;
 
 const MainSection = () => (
     <div id="main" style={MainSectionStyle}>
-        Dashboard Content
+        <div style={ThemeStyle}>Theme1</div>
+        <div style={ThemeStyle}>Theme2</div>
+        <div style={ThemeStyle}>Theme3</div>
+        <div style={ThemeStyle}>Theme4</div>
+        <div style={ThemeStyle}>Theme5</div>
     </div>
 );
 

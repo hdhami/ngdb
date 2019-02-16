@@ -4,7 +4,7 @@ import App from '../components/root/app';
 import generateHtml from './dashboard.html';
 
 const body = renderToString(<App />);
-const title = 'Server side Rendering with Styled Components';
+const title = 'Server side Rendering CSS in JS';
 
 const html = generateHtml({
     body,
