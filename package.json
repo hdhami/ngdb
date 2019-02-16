@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
+        "start:server": "node gen/server.min.js",
         "build:prod": "cross-env NODE_ENV=production webpack --profile --progress --colors --config app_modules/compiler/webpack/webpack.config.babel.js",
         "precommit": "lint-staged --config app_modules/hooks/husky/.lintstagedrc",
         "cosmics": "prettier --config app_modules/cosmics/prettier/.prettierrc --write \"app/**/*.{js,scss}\"",
