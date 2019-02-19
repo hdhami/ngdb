@@ -1,13 +1,5 @@
 import React from 'react';
-
-const HeaderStyle = {
-    display: 'flex',
-    height: '50px',
-    'align-items': 'center',
-    'justify-content': 'center',
-    color: 'gray',
-    'border-bottom': '1px solid #eee'
-};
+import styled from 'styled-components';
 
 const AppStyle = {
     display: 'flex',
@@ -46,7 +38,14 @@ const ThemeStyle = {
     cursor: 'pointer'
 };
 
-const Header = () => <header style={HeaderStyle}>Welcome to My Dashboard</header>;
+const Header = styled.header`
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    border-bottom: 1px solid #eee;
+`;
 
 const MainSection = () => (
     <div id="main" style={MainSectionStyle}>
@@ -62,7 +61,7 @@ const Footer = () => <footer style={FooterStyle}>All rights reserved @ ngdb</foo
 
 const App = () => (
     <div className="dashboard" style={AppStyle}>
-        <Header />
+        <Header>Welcome to My Dashboard</Header>
         <MainSection />
         <Footer />
     </div>
