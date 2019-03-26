@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import themes from '../../config/themes';
 
 const AppStyle = {
     display: 'flex',
@@ -49,11 +50,11 @@ const Header = styled.header`
 
 const MainSection = () => (
     <div id="main" style={MainSectionStyle}>
-        <div style={ThemeStyle}>Theme1</div>
-        <div style={ThemeStyle}>Theme2</div>
-        <div style={ThemeStyle}>Theme3</div>
-        <div style={ThemeStyle}>Theme4</div>
-        <div style={ThemeStyle}>Theme5</div>
+        {themes.map(theme => (
+            <button key={theme.id} type="button" style={ThemeStyle} onClick={() => {}}>
+                {theme.name}
+            </button>
+        ))}
     </div>
 );
 
