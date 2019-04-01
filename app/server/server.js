@@ -3,6 +3,7 @@ import DashboardHtml from '../html/dashboard';
 import { PORT } from '../config/server-config';
 
 const server = express();
+server.use(express.static('gen'));
 
 server.get('/', (req, res) => {
     res.send(DashboardHtml);

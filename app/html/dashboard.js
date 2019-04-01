@@ -13,7 +13,7 @@ const body = renderToString(
 );
 
 const styleTags = sheet.getStyleTags();
-const scripts = `<script src='/app.min.js'></script>`;
+const scripts = `<script src='/vendor.min.js'></script> <script src='/app.min.js'></script>`;
 const title = 'Server side Rendering CSS in JS';
 
 const html = generateHtml({

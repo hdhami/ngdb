@@ -1,11 +1,11 @@
 import { baseConfiguraton, path, IS_PRODUCTION, merge } from './webpack.config.base';
 import getConfig from './build-config';
-import { getEntries } from './entry-builder';
+import { getServerEntries } from './entry-builder';
 
 const config = getConfig();
 
 const serverConfiguration = merge(baseConfiguraton, {
-    entry: getEntries(IS_PRODUCTION, path, path.join(__dirname, config.paths.rootPathRelativeToCompiler)),
+    entry: getServerEntries(path, path.join(__dirname, config.paths.rootPathRelativeToCompiler)),
     target: 'node',
     output: {
         path: path.join(__dirname, config.paths.outputBasePath),
