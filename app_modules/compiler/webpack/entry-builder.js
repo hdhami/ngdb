@@ -5,7 +5,7 @@ const getVendorEntry = isProduction => {
     };
 };
 const getAppEntries = (path, rootPath) => ({
-    app: path.join(rootPath, 'app/components/root/app.js')
+    app: path.join(rootPath, 'app/components/root/app.client.js')
 });
 
 const getServerEntries = (path, rootPath) => ({
