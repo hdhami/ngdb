@@ -13,12 +13,13 @@ const body = renderToString(
 );
 
 const styleTags = sheet.getStyleTags();
-// const body = renderToString(<App />);
+const scripts = `<script src='/app.min.js'></script>`;
 const title = 'Server side Rendering CSS in JS';
 
 const html = generateHtml({
     body,
     title,
-    styleTags
+    styleTags,
+    scripts
 });
 export default html;

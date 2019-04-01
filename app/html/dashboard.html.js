@@ -4,7 +4,7 @@
  * application code into before sending it to the client as regular HTML.
  * Note we're returning a template string from this function.
  */
-const Html = ({ body, title, styleTags }) => `
+const Html = ({ body, title, styleTags, scripts }) => `
   <!DOCTYPE html>
   <html>
     <head>
@@ -13,6 +13,7 @@ const Html = ({ body, title, styleTags }) => `
     </head>
     <body style="margin:0">
       ${body}
+      ${scripts}
     </body>
   </html>
 `;
