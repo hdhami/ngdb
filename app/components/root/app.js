@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import Drawer from '@material-ui/core/Drawer';
 import themes from '../../config/themes';
 
 const Dashboard = styled.div`
@@ -48,25 +49,32 @@ const Button = styled.button`
     cursor: pointer;
 `;
 
-const App = () => (
-    <Dashboard>
-        <Header>Welcome to My Dashboard</Header>
-        <MainSection>
-            {themes.map(theme => (
-                <Button
-                    key={theme.id}
-                    type="button"
-                    onClick={() => {
-                        // eslint-disable-next-line no-alert
-                        alert(theme.name);
-                    }}
-                >
-                    {theme.name}
-                </Button>
-            ))}
-        </MainSection>
-        <Footer>All rights reserved @ ngdb</Footer>
-    </Dashboard>
-);
+const App = () => {
+    const [open, setOpen] = useState(false);
+    return (
+        <Dashboard>
+            <Header>Welcome to My Dashboard</Header>
+            <MainSection>
+                {themes.map(theme => (
+                    <Button
+                        key={theme.id}
+                        type="button"
+                        onClick={() => {
+                            setOpen(true);
+                        }}
+                    >
+                        {theme.name}
+                    </Button>
+                ))}
+            </MainSection>
+            <Footer>All rights reserved @ ngdb</Footer>
+            <Drawer anchor="right" open={open}>
+                <div tabIndex={0} role="button">
+                    abc
+                </div>
+            </Drawer>
+        </Dashboard>
+    );
+};
 
 export default App;

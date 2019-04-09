@@ -2,27 +2,72 @@ const themes = [
     {
         name: 'Theme1',
         id: '_Theme1',
-        pageSource: ''
+        pageSource: [
+            {
+                name: 'Home',
+                source: ''
+            },
+            {
+                name: 'About Us',
+                source: ''
+            }
+        ]
     },
     {
         name: 'Theme2',
         id: '_Theme2',
-        pageSource: ''
+        pageSource: [
+            {
+                name: 'Home',
+                source: ''
+            },
+            {
+                name: 'About Us',
+                source: ''
+            }
+        ]
     },
     {
         name: 'Theme3',
         id: '_Theme3',
-        pageSource: ''
+        pageSource: [
+            {
+                name: 'Home',
+                source: ''
+            },
+            {
+                name: 'About Us',
+                source: ''
+            }
+        ]
     },
     {
         name: 'Theme4',
         id: '_Theme4',
-        pageSource: ''
+        pageSource: [
+            {
+                name: 'Home',
+                source: ''
+            },
+            {
+                name: 'About Us',
+                source: ''
+            }
+        ]
     },
     {
         name: 'Theme5',
         id: '_Theme5',
-        pageSource: ''
+        pageSource: [
+            {
+                name: 'Home',
+                source: ''
+            },
+            {
+                name: 'About Us',
+                source: ''
+            }
+        ]
     }
 ];
 
