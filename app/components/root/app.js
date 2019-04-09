@@ -49,26 +49,24 @@ const Button = styled.button`
 `;
 
 const App = () => (
-    <div id="root">
-        <Dashboard>
-            <Header>Welcome to My Dashboard</Header>
-            <MainSection>
-                {themes.map(theme => (
-                    <Button
-                        key={theme.id}
-                        type="button"
-                        onClick={() => {
-                            // eslint-disable-next-line no-alert
-                            alert(theme.name);
-                        }}
-                    >
-                        {theme.name}
-                    </Button>
-                ))}
-            </MainSection>
-            <Footer>All rights reserved @ ngdb</Footer>
-        </Dashboard>
-    </div>
+    <Dashboard>
+        <Header>Welcome to My Dashboard</Header>
+        <MainSection>
+            {themes.map(theme => (
+                <Button
+                    key={theme.id}
+                    type="button"
+                    onClick={() => {
+                        // eslint-disable-next-line no-alert
+                        alert(theme.name);
+                    }}
+                >
+                    {theme.name}
+                </Button>
+            ))}
+        </MainSection>
+        <Footer>All rights reserved @ ngdb</Footer>
+    </Dashboard>
 );
 
 export default App;

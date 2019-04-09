@@ -12,8 +12,10 @@ const Html = ({ body, title, styleTags, scripts }) => `
       ${styleTags}
     </head>
     <body style="margin:0">
-      ${body}
-      ${scripts}
+        <div id="root">
+            ${body}
+        </div>
+        ${scripts}
     </body>
   </html>
 `;
