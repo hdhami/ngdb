@@ -47,6 +47,7 @@ const Button = styled.button`
     border: 1px solid #fff;
     box-sizing: border-box;
     cursor: pointer;
+    background: transparent;
 `;
 
 const App = () => {
