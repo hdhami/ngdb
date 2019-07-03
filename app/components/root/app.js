@@ -52,6 +52,7 @@ const Button = styled.button`
 
 const App = () => {
     const [open, setOpen] = useState(false);
+    const [themePageSource, setThemePageSource] = useState([]);
     return (
         <Dashboard>
             <Header>Welcome to My Dashboard</Header>
@@ -62,6 +63,7 @@ const App = () => {
                         type="button"
                         onClick={() => {
                             setOpen(true);
+                            setThemePageSource(theme.pageSource);
                         }}
                     >
                         {theme.name}
@@ -69,9 +71,19 @@ const App = () => {
                 ))}
             </MainSection>
             <Footer>All rights reserved @ ngdb</Footer>
-            <Drawer anchor="right" open={open}>
+            <Drawer
+                anchor="right"
+                open={open}
+                onClose={() => {
+                    setOpen(false);
+                }}
+            >
                 <div tabIndex={0} role="button">
-                    abc
+                    <ul>
+                        {themePageSource.map(page => (
+                            <li key={page.id}>{page.name}</li>
+                        ))}
+                    </ul>
                 </div>
             </Drawer>
         </Dashboard>
