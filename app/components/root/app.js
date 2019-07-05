@@ -78,10 +78,33 @@ const App = () => {
                     setOpen(false);
                 }}
             >
-                <div tabIndex={0} role="button">
-                    <ul>
+                <div tabIndex={0} role="button" style={{ width: '300px', height: '100%' }}>
+                    <ul
+                        style={{
+                            padding: '5px',
+                            'list-style': 'none',
+                            display: 'flex',
+                            'flex-direction': 'column',
+                            margin: '0',
+                            height: '100%'
+                        }}
+                    >
                         {themePageSource.map(page => (
-                            <li key={page.id}>{page.name}</li>
+                            <li
+                                key={page.id}
+                                style={{
+                                    display: 'flex',
+                                    'min-height': '50px',
+                                    'align-items': 'center',
+                                    'justify-content': 'center',
+                                    'border-bottom': '2px solid #eee',
+                                    flex: 'auto',
+                                    background: '#d0cdd4',
+                                    cursor: 'pointer'
+                                }}
+                            >
+                                {page.name}
+                            </li>
                         ))}
                     </ul>
                 </div>
