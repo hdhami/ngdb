@@ -1,37 +1,37 @@
 const pageSource = [
     {
-        name: 'Landing',
+        name: 'landing',
         source: ''
     },
     {
-        name: 'Listing',
+        name: 'listing',
         source: ''
     }
 ];
 const themes = [
     {
-        name: 'Theme1',
-        id: '_Theme1',
+        name: 'theme1',
+        id: '_theme1',
         pageSource: [...pageSource]
     },
     {
-        name: 'Theme2',
-        id: '_Theme2',
+        name: 'theme2',
+        id: '_theme2',
         pageSource: [...pageSource]
     },
     {
-        name: 'Theme3',
-        id: '_Theme3',
+        name: 'theme3',
+        id: '_theme3',
         pageSource: [...pageSource]
     },
     {
-        name: 'Theme4',
-        id: '_Theme4',
+        name: 'theme4',
+        id: '_theme4',
         pageSource: [...pageSource]
     },
     {
-        name: 'Theme5',
-        id: '_Theme5',
+        name: 'theme5',
+        id: '_theme5',
         pageSource: [...pageSource]
     }
 ];
