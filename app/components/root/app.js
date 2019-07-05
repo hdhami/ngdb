@@ -52,7 +52,7 @@ const Button = styled.button`
 
 const App = () => {
     const [open, setOpen] = useState(false);
-    const [themePageSource, setThemePageSource] = useState([]);
+    const [activeTheme, setActiveTheme] = useState(null);
     return (
         <Dashboard>
             <Header>Welcome to My Dashboard</Header>
@@ -63,7 +63,7 @@ const App = () => {
                         type="button"
                         onClick={() => {
                             setOpen(true);
-                            setThemePageSource(theme.pageSource);
+                            setActiveTheme(theme);
                         }}
                     >
                         {theme.name}
@@ -79,7 +79,7 @@ const App = () => {
                 }}
             >
                 <div tabIndex={0} role="button" style={{ width: '300px', height: '100%' }}>
-                    <ul
+                    <div
                         style={{
                             padding: '5px',
                             'list-style': 'none',
@@ -89,24 +89,28 @@ const App = () => {
                             height: '100%'
                         }}
                     >
-                        {themePageSource.map(page => (
-                            <li
-                                key={page.id}
-                                style={{
-                                    display: 'flex',
-                                    'min-height': '50px',
-                                    'align-items': 'center',
-                                    'justify-content': 'center',
-                                    'border-bottom': '2px solid #eee',
-                                    flex: 'auto',
-                                    background: '#d0cdd4',
-                                    cursor: 'pointer'
-                                }}
-                            >
-                                {page.name}
-                            </li>
-                        ))}
-                    </ul>
+                        {activeTheme &&
+                            activeTheme.pageSource.map(page => (
+                                <a
+                                    key={page.id}
+                                    style={{
+                                        display: 'flex',
+                                        'min-height': '50px',
+                                        'align-items': 'center',
+                                        'justify-content': 'center',
+                                        'border-bottom': '2px solid #eee',
+                                        flex: 'auto',
+                                        background: '#d0cdd4',
+                                        cursor: 'pointer',
+                                        color: '#000000',
+                                        'text-decoration': 'none'
+                                    }}
+                                    href={`/${activeTheme.name}/${page.name}`}
+                                >
+                                    {page.name}
+                                </a>
+                            ))}
+                    </div>
                 </div>
             </Drawer>
         </Dashboard>
