@@ -48,6 +48,32 @@ const Button = styled.button`
     box-sizing: border-box;
     cursor: pointer;
     background: transparent;
+
+    &:hover {
+        background: #dcd8d8;
+        opacity: 0.8;
+    }
+    &:focus {
+        outline: none;
+    }
+`;
+
+const PageSource = styled.a`
+    display: flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #eee;
+    flex: auto;
+    background: #eee;
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+
+    &:hover {
+        background: #dcd8d8;
+        opacity: 0.8;
+    }
 `;
 
 const App = () => {
@@ -91,24 +117,9 @@ const App = () => {
                     >
                         {activeTheme &&
                             activeTheme.pageSource.map(page => (
-                                <a
-                                    key={page.id}
-                                    style={{
-                                        display: 'flex',
-                                        'min-height': '50px',
-                                        'align-items': 'center',
-                                        'justify-content': 'center',
-                                        'border-bottom': '2px solid #eee',
-                                        flex: 'auto',
-                                        background: '#d0cdd4',
-                                        cursor: 'pointer',
-                                        color: '#000000',
-                                        'text-decoration': 'none'
-                                    }}
-                                    href={`/${activeTheme.name}/${page.name}`}
-                                >
+                                <PageSource key={page.id} href={`/${activeTheme.name}/${page.name}`}>
                                     {page.name}
-                                </a>
+                                </PageSource>
                             ))}
                     </div>
                 </div>
