@@ -63,7 +63,7 @@ const PageSource = styled.a`
     min-height: 50px;
     align-items: center;
     justify-content: center;
-    border-bottom: 2px solid #eee;
+    border: 1px solid #fff;
     flex: auto;
     background: #eee;
     cursor: pointer;
