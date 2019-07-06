@@ -14,7 +14,7 @@ const Header = styled.header`
     height: 50px;
     align-items: center;
     justify-content: center;
-    color: gray;
+    color: #333;
     border-bottom: 1px solid #eee;
 `;
 
@@ -23,7 +23,7 @@ const Footer = styled.footer`
     height: 30px;
     align-items: center;
     justify-content: center;
-    color: gray;
+    color: #333;
     margin-top: auto;
     border-top: 1px solid #eee;
 `;
@@ -47,11 +47,11 @@ const Button = styled.button`
     border: 1px solid #fff;
     box-sizing: border-box;
     cursor: pointer;
-    background: transparent;
-
+    background: ${props => props.themeColor || '#eee'};
+    font-size: 18px;
     &:hover {
-        background: #dcd8d8;
-        opacity: 0.8;
+        background: ${props => props.themeColor || '#dcd8d8'};
+        opacity: 0.9;
     }
     &:focus {
         outline: none;
@@ -65,14 +65,14 @@ const PageSource = styled.a`
     justify-content: center;
     border: 1px solid #fff;
     flex: auto;
-    background: #eee;
+    background: ${props => props.themeColor || '#eee'};
     cursor: pointer;
     color: #000000;
     text-decoration: none;
-
+    font-size: 18px;
     &:hover {
-        background: #dcd8d8;
-        opacity: 0.8;
+        background: ${props => props.themeColor || '#dcd8d8'};
+        opacity: 0.9;
     }
 `;
 
@@ -87,6 +87,7 @@ const App = () => {
                     <Button
                         key={theme.id}
                         type="button"
+                        themeColor={theme.color}
                         onClick={() => {
                             setOpen(true);
                             setActiveTheme(theme);
@@ -117,7 +118,11 @@ const App = () => {
                     >
                         {activeTheme &&
                             activeTheme.pageSource.map(page => (
-                                <PageSource key={page.id} href={`/${activeTheme.name}/${page.name}`}>
+                                <PageSource
+                                    key={page.id}
+                                    href={`/${activeTheme.name}/${page.name}`}
+                                    themeColor={activeTheme.color}
+                                >
                                     {page.name}
                                 </PageSource>
                             ))}
