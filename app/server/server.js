@@ -9,6 +9,10 @@ server.get('/', (req, res) => {
     res.send(DashboardHtml);
 });
 
+server.get('/:property/:lang/:page', (req, res) => {
+    res.send(DashboardHtml);
+});
+
 server.listen(PORT);
 // eslint-disable-next-line no-console
 console.log(`Serving running at http://localhost:${PORT}`);

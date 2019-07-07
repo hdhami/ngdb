@@ -1,10 +1,12 @@
 const pageSource = [
     {
         name: 'landing',
+        lang: 'en',
         source: ''
     },
     {
         name: 'listing',
+        lang: 'en',
         source: ''
     }
 ];

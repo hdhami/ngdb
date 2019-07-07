@@ -120,7 +120,7 @@ const App = () => {
                             activeTheme.pageSource.map(page => (
                                 <PageSource
                                     key={page.id}
-                                    href={`/${activeTheme.name}/${page.name}`}
+                                    href={`/${activeTheme.name}/${page.lang}/${page.name}`}
                                     themeColor={activeTheme.color}
                                 >
                                     {page.name}
