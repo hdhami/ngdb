@@ -1,4 +1,7 @@
 const PORT = 3000;
-const PORT1 = 4000;
+const ROOT_PATH = './../../';
+const path = require('path');
 
-export { PORT, PORT1 };
+const PAGE_SOURCE_PATH = path.join(ROOT_PATH, 'app/html/page-source');
+
+export { PORT, ROOT_PATH, PAGE_SOURCE_PATH };

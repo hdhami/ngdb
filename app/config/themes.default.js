@@ -2,12 +2,12 @@ const pageSource = [
     {
         name: 'landing',
         lang: 'en',
-        source: ''
+        source: 'app/html/page-source/landing.html'
     },
     {
         name: 'listing',
         lang: 'en',
-        source: ''
+        source: 'app/html/page-source/landing.html'
     }
 ];
 const themes = [
