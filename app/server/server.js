@@ -4,24 +4,18 @@ import { PORT, ROOT_PATH } from '../config/server-config';
 import themes from '../config/themes';
 
 const path = require('path');
+const ejs = require('ejs');
 
 const server = express();
 server.use(express.static('gen'));
 
+// view engine setup
+server.engine('ejs', ejs.renderFile);
+server.set('view engine', 'ejs');
+
 server.get('/', (req, res) => {
     res.send(DashboardHtml);
 });
-
-async function getDataAsync(sourcePath) {
-    let html = '';
-    try {
-        html = await import(`${sourcePath}`).default;
-    } catch (error) {
-        console('error caught', error);
-    }
-
-    return html ? html() : '';
-}
 
 server.get('/:theme/:lang/:page', (req, res) => {
     const themeName = req.params.theme;
@@ -30,12 +24,14 @@ server.get('/:theme/:lang/:page', (req, res) => {
     const themeDetails = themes.find(_theme => _theme.name === themeName);
 
     const pageSource = themeDetails ? themeDetails.pageSource.find(pageSrc => pageSrc.name === source) : null;
-    let sourceHtml = '';
 
     if (pageSource) {
-        sourceHtml = getDataAsync(`${path.join(ROOT_PATH, pageSource.source)}`);
+        const filePath = path.join(`${ROOT_PATH}`, `${pageSource.source}`);
+        res.render(path.resolve(filePath), {
+            themeDetails,
+            pageSource
+        });
     }
-    res.send(sourceHtml);
 });
 
 server.listen(PORT);
