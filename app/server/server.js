@@ -3,11 +3,14 @@ import DashboardHtml from '../html/dashboard';
 import { PORT, ROOT_PATH } from '../config/server-config';
 import themes from '../config/themes';
 
+const serverOutputPath = 'gen';
+const clientOuputPath = '../proj';
 const path = require('path');
 const ejs = require('ejs');
 
 const server = express();
-server.use(express.static('gen'));
+server.use(express.static(`${serverOutputPath}`));
+server.use(express.static(`${clientOuputPath}`));
 
 // view engine setup
 server.engine('ejs', ejs.renderFile);
