@@ -1,4 +1,4 @@
-# ngdb
+# ngdb(Next Generation Dashboard)
 
 This framework basically has the features for next generation dashboard which will work along next generation prototype
 for providing seamless developing experience.
