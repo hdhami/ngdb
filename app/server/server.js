@@ -1,4 +1,5 @@
 import express from 'express';
+// import expressStaticGzip from 'express-static-gzip';
 import DashboardHtml from '../html/dashboard';
 import { PORT, ROOT_PATH } from '../config/server-config';
 import themes from '../config/themes';
@@ -7,11 +8,28 @@ const serverOutputPath = 'gen';
 const clientOuputPath = '../proj';
 const path = require('path');
 const ejs = require('ejs');
+const compression = require('compression');
+// const shrinkRay = require('shrink-ray');
 
 const server = express();
 server.use(express.static(`${serverOutputPath}`));
 server.use(express.static(`${clientOuputPath}`));
-
+server.use(compression());
+// server.use(shrinkRay());
+// server.use(
+//     `${serverOutputPath}`,
+//     expressStaticGzip(`${serverOutputPath}`, {
+//         enableBrotli: true,
+//         orderPreference: ['br', 'gz']
+//     })
+// );
+// server.use(
+//     `${clientOuputPath}`,
+//     expressStaticGzip(`${clientOuputPath}`, {
+//         enableBrotli: true,
+//         orderPreference: ['br', 'gz']
+//     })
+// );
 // view engine setup
 server.engine('ejs', ejs.renderFile);
 server.set('view engine', 'ejs');

@@ -1,20 +1,20 @@
 const pageSource = [
     {
-        name: 'landing',
+        name: 'restaurant-management',
         lang: 'en',
-        source: 'app/html/page-source/landing'
+        source: 'app/html/page-source/restaurant-management'
     },
     {
-        name: 'listing',
+        name: 'restaurant-management',
         lang: 'en',
-        source: 'app/html/page-source/landing'
+        source: 'app/html/page-source/restaurant-management'
     }
 ];
 const themes = [
     {
         name: 'theme1',
         id: '_theme1',
-        color: '#666666',
+        color: '#9e9ebf',
         pageSource: [...pageSource]
     },
     {
@@ -26,13 +26,13 @@ const themes = [
     {
         name: 'theme3',
         id: '_theme3',
-        color: '#735d35',
+        color: '#8a8ae0',
         pageSource: [...pageSource]
     },
     {
         name: 'theme4',
         id: '_theme4',
-        color: '#426cad',
+        color: '#927239',
         pageSource: [...pageSource]
     },
     {
